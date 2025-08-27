@@ -25,7 +25,6 @@ class BinaryTree:
             lastly, gets the difference between the two heights
             """
             if not node or node.val is None:
-                print("zero")
                 return 0  # Base case: height of empty tree is 0
             left = check_height(node.left)
 
