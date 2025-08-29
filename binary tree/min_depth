@@ -1,0 +1,43 @@
+'''
+Returns the number of nodes in the shortest path of a binary tree
+'''
+class Solution(object):
+    def minDepth(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
+        
+        if not root:
+            return 0
+        # If one of the subtrees is missing, take the other
+        if not root.left:
+            return 1 + self.minDepth(root.right)
+        if not root.right:
+            return 1 + self.minDepth(root.left)
+
+
+        return 1 + min(self.minDepth(root.left), self.minDepth(root.right)) # Return the greater of left and right subtree heights
+
+
+
+
+'''
+# Solution 2 avoids recursive calls for None nodes
+class Solution(object):
+    def minDepth(self, root):
+        if not root:
+            return 0
+
+        if not root.left and not root.right:
+            return 1
+
+        min_depth = float('inf')
+
+        if root.left:
+            min_depth = min(min_depth, self.minDepth(root.left))
+        if root.right:
+            min_depth = min(min_depth, self.minDepth(root.right))
+
+        return 1 + min_depth
+'''
