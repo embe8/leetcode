@@ -23,7 +23,6 @@ class Solution(object):
 
 
 '''
-# Solution 2 avoids recursive calls for None nodes
 class Solution(object):
     def minDepth(self, root):
         if not root:
