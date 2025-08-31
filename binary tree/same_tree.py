@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+'''
+Checks if two trees are the same/contain the same elements
+'''
 class Solution(object):
     def isSameTree(self, p, q):
         """
