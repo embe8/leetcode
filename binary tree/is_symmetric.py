@@ -24,7 +24,33 @@ class Solution(object):
             if leftSubtree.val != rightSubtree.val:
                 return False
             return helper(leftSubtree.left, rightSubtree.right) and helper(leftSubtree.right, rightSubtree.left)
-
+        # if tree is empty
         if not root:
             return True
         return helper(root.left, root.right)
+
+# Iterative solution
+class Solution(object):
+    def isSymmetric(self, root):
+        if not root:
+            return True
+        q1 = [root.left]
+        q2 = [root.right]
+        while q1 and q2:
+            leftSubtree = q1.pop(0)
+            rightSubtree = q2.pop(0)
+            
+            if not leftSubtree and not rightSubtree:
+                continue
+            if not leftSubtree or not rightSubtree:
+                return False
+            if leftSubtree.val != rightSubtree.val:
+                return False
+            q1.append(leftSubtree.left)
+            q2.append(rightSubtree.right)
+            q1.append(leftSubtree.right)
+            q2.append(rightSubtree.left)
+        return True
+        
+        
+
