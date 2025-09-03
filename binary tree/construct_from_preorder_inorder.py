@@ -29,8 +29,29 @@ class Solution(object):
         return root
 
 # Optimized solution with O(n) time complexity
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        self.index = 0
+        inorder_index_map = {value: idx for idx, value in enumerate(inorder)}
+        return self.helper(preorder, 0, len(inorder) - 1, inorder_index_map)
+        
+    def helper(self, preorder, start, end, map):
+        if start > end: return None
+        root_val = preorder[self.index]
+        self.index += 1
 
+        root = TreeNode(root_val)
 
+        inorder_index = map.get(root_val)
+        
+        # recursively build left subtree by getting the indices of all elements
+        # to the left of the root in the inorder array
+        root.left = self.helper(preorder, start, inorder_index - 1, map) 
+        # recursively build right subtree using indices of all elements to the
+        # right of the root in the inorder array
+        root.right = self.helper(preorder, inorder_index + 1, end, map)
+
+        return root
 
 
 
