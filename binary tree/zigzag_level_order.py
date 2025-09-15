@@ -40,3 +40,36 @@ class Solution(object):
                 queue.append((node.right, level + 1))
 
         return result
+
+# Alternate solution, uses same logic but saves memory by not storing level number
+
+from collections import deque
+class Solution(object):
+    def zigzagLevelOrder(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: List[List[int]]
+        """
+        if not root: return []
+        tree_queue = deque([root])
+        result = []
+        level_num = 0
+
+        while tree_queue:
+            
+            level_nodes = []
+            level_size = len(tree_queue)
+            for _ in range(level_size):
+                current_node = tree_queue.popleft()        
+                if level_num % 2 == 0:
+                    level_nodes.append(current_node.val)
+                else:
+                    level_nodes.insert(0, current_node.val)
+                if current_node.left:
+                    tree_queue.append(current_node.left)
+                if current_node.right:
+                    tree_queue.append(current_node.right)
+            level_num += 1
+            result.append(level_nodes)
+
+        return result
