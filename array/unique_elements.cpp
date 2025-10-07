@@ -14,7 +14,7 @@ public:
         for(int i = 1;i< nums.size();i++)
         {
             //check if not equal with previous element
-            if(nums[i] != nums[i-1])
+            if(nums[i] != nums[k-1])
             {
                 nums[k] = nums[i];
                 //increment k since unique element
