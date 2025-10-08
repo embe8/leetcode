@@ -19,7 +19,7 @@ class Solution(object):
         while i < m and j < n:
             if nums1[i] <= nums2[j]:
                 merged_list.append(nums1[i])
-                # increment indices of new vector and nums1
+                # increment nums1 index
                 i += 1
             else:
                 merged_list.append(nums2[j])
