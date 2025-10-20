@@ -7,12 +7,11 @@
 # Key used: should be unique so in this case, a list of characters (alphabet: a-z) was chosen and their count
 # if word has same key as what's in the map, it is added to the values associated with the key
 # as a result, a list of strings that have the same key (thus, they are anagrams of each other since same element count) are returned
+# Note: defaultdict automatically inserts elements that are not yet inserted
 
 # time complexity: O(n*m)
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        # keep track of strings visited
-        visited = []
         # keep track of number of elements in each string
         mapList = defaultdict(list)
         # traverse list of strings
