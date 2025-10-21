@@ -29,4 +29,16 @@ class Solution:
             mapList[key].append(strs[i])
 
         return list(mapList.values())
+
+# optimized solution with O(m*nlogn) time complexity
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # sort the chars and each word, use the sorted word as key
+        mapList = defaultdict(list)
+        for str in strs:
+            sortedStr = ''.join(sort(str))
+            # key is sorted string and its value is the list of strings
+            mapList[sortedStr].append(s)
+        return list(mapList.values())
+
         
