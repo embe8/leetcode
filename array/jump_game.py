@@ -28,6 +28,6 @@ class Solution(object):
         # since we shift goal by one til it reaches index 0 every
         # iteration, at the end we just check if we have reached
         # the first element
-        return True if goal == 0 else False
+        return True if goal == 0 else False # can just be return goal == 0
           
         
