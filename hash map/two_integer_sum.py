@@ -4,7 +4,7 @@ both elements sum to target
 Approach: use a hash map to keep track of the  index of each element where value is the index and key is the element
 Check for target-current element in the for loop and get the index for the difference
 '''
-
+# Time complexity: O(n)
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         maplist = {}
