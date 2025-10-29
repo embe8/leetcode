@@ -22,9 +22,9 @@ class Solution:
                 # same logic as addition
                 stack.append(stack.pop() * stack.pop())
             elif char == '/':
-                # same logis as subtraction
+                # same logic as subtraction
                 divisor, dividend = stack.pop(), stack.pop()
-                stack.append(int(dividend / divisor))
+                stack.append(int(float(dividend) / divisor))
             else:
                 stack.append(int(char))
         # return last element left which should be the result
