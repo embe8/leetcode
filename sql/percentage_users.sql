@@ -3,8 +3,12 @@
 # named Register with contest_id and user_id and user_id being the PK for both,
 # Problem: Find the percentage of users for each contest rounded to 2 decimal places
 
-SELECT contest_id, (AVG(user_id) / SUM(user_id) as percentage_user
-FROM Users u
-JOIN Register r
-ON u.user_id = r.user_id
-GROUP BY r.contest_id
+SELECT 
+    contest_id,
+    ROUND(COUNT(user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) AS percentage
+FROM Register
+GROUP BY 
+    contest_id
+ORDER BY
+    percentage DESC,
+    contest_id ASC
