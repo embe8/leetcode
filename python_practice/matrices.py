@@ -31,5 +31,14 @@ row3: 5 7  9
 for i, row in enumerate(matrix, 1):
   for j, value in enumerate(row, 1):
     print(f"Row:{i}, Col:{j} = {value}")
-    
-                                                                                                                     
+
+sample_string = "123456789"
+# reading string input and creating a matrix from it
+
+# input().split() to split string into comma separated elements e.g. 1234 to 1, 2, 3, 4
+# use map to convert it to int map(int, input().split())) and then convert to list
+# then append to matrix (each list is a row)
+for i in range(rows):
+  row = list(map(int, sample_string.split()))
+  matrix.append(row)
+
