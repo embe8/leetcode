@@ -11,7 +11,6 @@ class Solution:
         # use hash map to keep track of element = number
         mapS = {}
         mapT = {}
-        j = 0 # keeps track of index in arrayCopy
         for i in range(0, len(s)):
             if s[i] not in mapS:
                 mapS[s[i]] = 1
