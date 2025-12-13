@@ -20,3 +20,14 @@ class Solution(object):
             start += 1
             end -= 1
         return True
+
+# with slice notation
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        newString = ''
+        # create new string containing only alphanum chars
+        for char in s:
+            if char.isalnum():
+                newString += char.lower() # convert to lowercase
+        # compare new string with its reversed version
+        return newString == newString[::-1]
