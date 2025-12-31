@@ -20,6 +20,6 @@ class Solution(object):
                 mapList[num] += 1
             else:
                 mapList[num] = 1
-        sortedList = sorted(mapList.items(), key=lambda x: x[1], reverse=True)
+        sortedList = sorted(mapList.items(), key=lambda x: x[1], reverse=True)  # mapList.items() converts the dictionary into tuples, key=lambda x: x[1] use the freq (value) as *
         return sortedList[0][0]
         
