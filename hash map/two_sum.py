@@ -35,3 +35,15 @@ class Solution(object):
                     lst.append(j)
                     return lst
 
+class Solution:
+    def twoSum(self, nums: List[int], target: int)->[int, int]:
+        if not nums: return []
+        mapList = {}
+        for i, a in enumerate(nums):
+            diff = target - nums[i]
+            if diff in mapList:
+                # get the index of diff
+                index = mapList[diff]
+                if index != i:
+                    return sorted([i, index])
+            mapList[a] = i
