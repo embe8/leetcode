@@ -39,7 +39,7 @@ class Solution:
             sortedStr = ''.join(sort(str)) # 'ate'->[a,e,t]-> 'aet'
             # key is sorted string and its value is the list of strings
             mapList[sortedStr].append(str) # aet - [ate]
-        return list(mapList.values()) # mapList.values(0) returns an object so we convert it to list
+        return list(mapList.values()) # mapList.values(0) returns a dict_value object so we convert it to list
 
 # notes: mapList.values return [ate...]
 # mapList.key return aet
