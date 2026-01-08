@@ -22,6 +22,7 @@ class Solution(object):
         return True
 
 # with slice notation
+# time complexity: O(n^2)
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         newString = ''
@@ -36,3 +37,15 @@ This is string slicing that reverses the string.
 Slicing syntax: string[start:end:step]
 
 [::-1] means: start at the end, go to the beginning, step backwards by 1'''
+
+# improved version of above
+# time complexity: O(n)
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        chars = []  # Use list instead
+        for char in s:
+            if char.isalnum():
+                chars.append(char.lower())  # O(1) append
+        
+        cleaned = ''.join(chars)  # O(m) join (done once) # avoids creation of new string every time with the code ' newString += char.lower() # convert to lowercase' in previous
+        return cleaned == cleaned[::-1]
