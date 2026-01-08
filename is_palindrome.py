@@ -31,3 +31,8 @@ class Solution:
                 newString += char.lower() # convert to lowercase
         # compare new string with its reversed version
         return newString == newString[::-1]
+'''Notes:
+This is string slicing that reverses the string.
+Slicing syntax: string[start:end:step]
+
+[::-1] means: start at the end, go to the beginning, step backwards by 1'''
