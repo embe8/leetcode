@@ -1,3 +1,5 @@
+# Time complexity: O(n)
+
 class Solution(object):
     def isPalindrome(self, s):
         """
@@ -47,5 +49,5 @@ class Solution:
             if char.isalnum():
                 chars.append(char.lower())  # O(1) append
         
-        cleaned = ''.join(chars)  # O(m) join (done once) # avoids creation of new string every time with the code ' newString += char.lower() # convert to lowercase' in previous
+        cleaned = ''.join(chars)  # O(m) join (done once) avoids creation of new string every time with the code ' newString += char.lower() # convert to lowercase' in previous
         return cleaned == cleaned[::-1]
