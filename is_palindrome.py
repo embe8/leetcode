@@ -30,7 +30,7 @@ class Solution:
         newString = ''
         # create new string containing only alphanum chars
         for char in s:
-            if char.isalnum():
+            if char.isalnum(): # check if a letter or digit
                 newString += char.lower() # convert to lowercase
         # compare new string with its reversed version
         return newString == newString[::-1]
@@ -46,7 +46,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         chars = []  # Use list instead
         for char in s:
-            if char.isalnum():
+            if char.isalnum(): # check if character or digit
                 chars.append(char.lower())  # O(1) append
         
         cleaned = ''.join(chars)  # O(m) join (done once) avoids creation of new string every time with the code ' newString += char.lower() # convert to lowercase' in previous
