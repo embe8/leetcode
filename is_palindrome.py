@@ -3,24 +3,40 @@
 class Solution(object):
     def isPalindrome(self, s):
         """
+        Check if a string is a palindrome, ignoring non-alphanumeric characters and case.
         :type s: str
         :rtype: bool
         """
+        # Initialize two pointers: one at the start, one at the end
         start = 0
         end = len(s) - 1
+        
+        # Move pointers toward each other until they meet
         while start < end:
+            
+            # Skip non-alphanumeric characters from the right
+            # (spaces, punctuation, special chars)
             if not s[end].isalnum():
                 end -= 1
                 continue
-              
+            
+            # Skip non-alphanumeric characters from the left
+            # (spaces, punctuation, special chars)
             if not s[start].isalnum():
                 start += 1
                 continue
-
+            
+            # Compare characters (case-insensitive)
+            # If they don't match, it's not a palindrome
             if s[start].lower() != s[end].lower():
                 return False
+            
+            # Both characters match, move both pointers inward
             start += 1
             end -= 1
+        
+        # If we made it through the whole string without mismatches,
+        # it's a palindrome
         return True
 
 # with slice notation
