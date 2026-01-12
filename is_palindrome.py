@@ -67,3 +67,19 @@ class Solution:
         
         cleaned = ''.join(chars)  # O(m) join (done once) avoids creation of new string every time with the code ' newString += char.lower() # convert to lowercase' in previous
         return cleaned == cleaned[::-1]
+        
+# another version with one less line of code
+# no need to join can use the list and compare it with the reverse:
+class Solution:
+    def isPalindrome(self, s: string)->bool:
+        # create a list to store the string to be checked
+        word = []
+        for char in s:
+            if char.isalnum():
+                word.append(char.lower())
+
+        # compare the cleaned string to its reverse
+        if word == word[::-1]:
+            return True
+        else:
+            return False
