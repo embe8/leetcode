@@ -11,6 +11,12 @@ Open brackets are closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.
 '''
 
+'''Example input:
+Input: s = "([{}])"
+
+Output: true
+'''
+
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
