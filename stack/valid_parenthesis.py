@@ -21,7 +21,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         store = { ")": "(", "]":"[", "}" : "{"}
-        for char in s:
+        for char in s: # only checks the keys (closing brackets) so first iteration reverts to else: stack.append(char)
             if char in store:
                # check if last element in stack is equal to the corresponding closing bracket for current element
                 if stack and stack[-1] == store[char]:
