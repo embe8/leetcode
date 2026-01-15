@@ -12,9 +12,9 @@ class Solution:
             # left + right can result in overflow
             # get middle element, right - 1 since 0 index
             middle = left + ((right-left) // 2)
-            if nums[middle] > target:
+            if nums[middle] > target: # if element is more than target, means its on the left side (less) so minus one
                 right = middle - 1
-            elif nums[middle] < target:
+            elif nums[middle] < target: # if element is less than target, means its on the right side (more) so plus one
                 left = middle + 1
             else:
                 return middle
