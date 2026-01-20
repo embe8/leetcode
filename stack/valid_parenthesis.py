@@ -31,6 +31,10 @@ class Solution:
             else:
                 stack.append(char) # store current element in stack if it's not present
         return True if not stack else False
+
+#  given example [], first iteration attaches '[' to stack. Second iteration checks if ] is in store which it is, then it checks if stack is not empty
+#  And if last element in stack equals to the value corresponding to the current char in the store dictionary, in this case last element in stack
+#  is [ and it matches the value for store[char] where char is ] so the loop exits and True is returned since stack is empty
             
         
 
