@@ -36,3 +36,19 @@ class Solution:
                 right = middle - 1
             else: return middle
         return -1
+
+# Example:  Finding target = 7 in nums = [2, 5, 7, 9]
+'''
+middle = 0 + ((3-0)//2) = 1
+nums[1] = 5
+
+target (7) > nums[1] (5)
+→ left = 2
+
+left = 2, right = 3
+middle = 2 + ((3-2)//2) = 2
+nums[2] = 7
+
+target (7) == nums[2] (7)
+→ FOUND! Return 2
+'''
