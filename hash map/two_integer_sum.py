@@ -16,3 +16,16 @@ class Solution:
                     return sorted([i+1, index+1])
             maplist[numbers[i]] = i
         
+# same space complexity of O(n) but uses get function of map
+class Solution:
+    def twoSum(self, numbers: List[int], target: int)->List[int]:
+        mapList = {}
+        for i in range(len(numbers)):
+            # get the value we're looking for
+            difference = target - numbers[i]
+            # get its index
+            if difference in mapList:
+                index = mapList.get(difference, 0)
+                if index != i:
+                    return sorted([index+1, i+1])
+            mapList[numbers[i]] = i
