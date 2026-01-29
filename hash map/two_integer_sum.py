@@ -29,7 +29,7 @@ class Solution:
                 if index != i:
                     return sorted([index+1, i+1])
             mapList[numbers[i]] = i
-# Two pointer solution (Binary Search) time complexity: O(nlogn) space complexity: O(1)
+#  Binary Search solution with time complexity: O(nlogn) space complexity: O(1)
 class Solution:
     def twoSum(self, numbers: List[int], target: int)->List[int]:
         for i in range(len(numbers)):
