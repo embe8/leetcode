@@ -44,7 +44,7 @@ class Solution:
                 else: right = mid - 1
         return []
 
-# Two pointer solution with time complexity: 
+# Two pointer solution with time complexity: O(n) and space complexity: O(1)
 class Solution:
     def twoSum(self, numbers:List[int], target: int)->List[int]:
         left, right = 0, len(numbers) - 1
