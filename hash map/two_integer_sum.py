@@ -43,4 +43,17 @@ class Solution:
                     left = mid + 1
                 else: right = mid - 1
         return []
+
+# Two pointer solution with time complexity: 
+class Solution:
+    def twoSum(self, numbers:List[int], target: int)->List[int]:
+        left, right = 0, len(numbers) - 1
+        while left < right:
+            currentSum = numbers[left] + numbers[right]
+            if currentSum < target:
+                left += 1
+            elif currentSum > target:
+                right -= 1
+            else: return [left + 1, right + 1 ]
+        return []
             
