@@ -21,3 +21,10 @@ SELECT product_name, price, year
 FROM SALES s
 INNER JOIN PRODUCT p 
 ON p.product_id = s.product_id
+
+'''alternative'''
+
+SELECT product_name, year, price
+FROM Sales
+INNER JOIN Product
+ON Sales.product_id = Product.product_id
