@@ -1,4 +1,4 @@
-'''Given the following tables: SALES table
+'''Given the following tables: SALES table where fk is product_id
 +-------------+-------+
 | Column Name | Type  |
 +-------------+-------+
@@ -8,7 +8,7 @@
 | quantity    | int   |
 | price       | int   |
 +-------------+-------+
-  and PRODUCT table
+  and PRODUCT table where PK is product_id
 +--------------+---------+
 | Column Name  | Type    |
 +--------------+---------+
