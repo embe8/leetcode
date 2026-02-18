@@ -5,8 +5,8 @@ if the edge has been traversed before, the function that first called the dfs wi
 edge as [u, v]
 '''
 
-# Time complexity:
-# Space complexity:
+# Time complexity: O(E* (V + E))
+# Space complexity: O(V + E)
 
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
