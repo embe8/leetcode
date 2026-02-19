@@ -38,7 +38,7 @@ class Solution:
 
 # Optimal solution
 # Time complexity: O(V + E)
-# Space complexity:
+# Space complexity: O(V + E)
 
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]])->List[int]:
