@@ -56,25 +56,26 @@ class Solution:
 
         def dfs(node, parent):
             nonlocal cycleStart
+            # if the node is already visited the cycle starts at that node
             if visited[node]:
                 cycleStart = node
                 return True
             visited[node] = True
-            for neighbor in adj[node]:
-                if neighbor == parent:
+            for neighbor in adj[node]:# traverse neighbors of each node
+                if neighbor == parent: 
                     continue
                 if dfs(neighbor, node):
-                    if cycleStart != -1:
+                    if cycleStart != -1: # if the node has a parent, add the node to the cycle
                         cycle.add(node)
-                    if node == cycleStart:
+                    if node == cycleStart: # if node has no parent, set cycleStart back to -1 and return True since cycle has been found
                         cycleStart = -1
                     return True
-            return False
+            return False # no cycle found
         # first call to dfs
         dfs(1, -1) # 1 is the first node and its parent is itself
         # find the last nodes visited in the cycle
         for u, v in reversed(edges):
-            if u in cycle and v in cycle:
+            if u in cycle and v in cycle: # the last edge visited 
                 return [u, v]
         return []
 
