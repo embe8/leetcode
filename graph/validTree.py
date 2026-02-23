@@ -15,7 +15,7 @@ class Solution:
             adj[u].append(v)
             adj[v].append(u)
         visited = set()
-        q = deque([(0, -1)])
+        q = deque([(0, -1)]) #  (current node, previous node)
         visited.add(0)
         while q:
             node, parent = q.popleft()
