@@ -22,9 +22,9 @@ class Solution:
             for neighbor in adj[node]:
                 if neighbor == parent: continue
 
-                if neighbor in visited:
+                if neighbor in visited: # an  edge can't be visited twice for a valid tree
                     return False
 
                 visited.add(neighbor)
                 q.append((neighbor, node))
-        return len(visited) == n
+        return len(visited) == n # if the number of nodes visited is equal to the number of nodes passed as argument, then it's a valid tree
