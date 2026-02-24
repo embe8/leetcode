@@ -11,12 +11,12 @@ class Solution:
         if len(edges) > n - 1 : return False
         # create the adjacency list
         adj = [[] for _ in range(n)]
-        for u, v in edges:
+        for u, v in edges: #   since undirected graph, need to append the nodes both ways
             adj[u].append(v)
             adj[v].append(u)
-        visited = set()
+        visited = set() #   use set so duplicates are not included
         q = deque([(0, -1)]) #  (current node, previous node)
-        visited.add(0)
+        visited.add(0) # 0 is the first node
         while q:
             node, parent = q.popleft()
             for neighbor in adj[node]:
