@@ -28,3 +28,36 @@ class Solution:
                 visited.add(neighbor)
                 q.append((neighbor, node))
         return len(visited) == n # if the number of nodes visited is equal to the number of nodes passed as argument, then it's a valid tree
+
+# Same solution but with different comments ( more descriptive of each step )
+class Solution:
+    def validTree(self, n: int, edges: List[List[int]])->bool:
+        # edge case
+        if len(edges) > (n-1): return False
+        # create adj list
+        adj = [[] for _ in range(n + 1)]
+        # create the edges, undirected so need to append both ways
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        # create the set that will keep track of visited nodes
+        visited = set()
+        # use a deque to keep track of nodes to visit
+        q = deque([(0, -1)])
+        visited.add(0)
+
+        while q:
+            # while there are nodes to traverse
+            node, parent = q.popleft() # remember (0, -1) is the first node and -1 because it has no parent so here we get node, parent
+            # visit each node's neighbor
+            for neighbor in adj[node]:
+                if neighbor == parent: continue # skip already visited
+                if neighbor in visited: return False # can't visist twice if valid tree
+
+                visited.add(neighbor)
+                q.append((neighbor, node))
+
+        return len(visited) == n
+
+
+
