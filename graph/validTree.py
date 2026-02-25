@@ -1,7 +1,9 @@
 '''Neetcode: Valid Tree: Given a list of lists[int] and number of nodes n where the list are the edges, determine if the tree is valid 
 where a valid tree has no cycles and the number of edges should be n - 1
 Approach: Place the edges in an adjacency list, use a set to keep track of visisted nodes using bfs, and use a deque to keep track of nodes
-to visit, at the end if the length of visited equals to node return True'''
+to visit, at the end if the length of visited equals to node return True
+IMPORTANT: uses breadth first search starting from node 0 and its parent (itself so -1)'''
+
 
 # Space complexity: O(V + E)
 # Time complexity: O(V + E)
