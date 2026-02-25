@@ -15,7 +15,7 @@ class Solution:
             adj[u].append(v)
             adj[v].append(u)
         visited = set() #   use set so duplicates are not included
-        q = deque([(0, -1)]) #  (current node, previous node)
+        q = deque([(0, -1)]) #  (current node, previous node) -1 means it does not have a parent, 0 is the first node so no parent
         visited.add(0) # 0 is the first node
         while q:
             node, parent = q.popleft()
