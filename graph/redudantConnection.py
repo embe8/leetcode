@@ -79,6 +79,13 @@ class Solution:
                 return [u, v]
         return []
 
+'''
+0. Initialize number of nodes, adjacency list, set to store cycle, visited array (False), cycleStart (-1)
+1. Pass the first node to depth first search (1) and its parent (-1) since it does not have one or it's itself
+2. start dfs, check if node is visited, if not mark it as true, otherwise, mark cycleStart as the node
+3. traverse the neighbors of each node
+'''
+
 
 
 
