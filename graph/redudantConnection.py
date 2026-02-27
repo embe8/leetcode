@@ -83,7 +83,9 @@ class Solution:
 0. Initialize number of nodes, adjacency list, set to store cycle, visited array (False), cycleStart (-1)
 1. Pass the first node to depth first search (1) and its parent (-1) since it does not have one or it's itself
 2. start dfs, check if node is visited, if not mark it as true, otherwise, mark cycleStart as the node
-3. traverse the neighbors of each node
+3. traverse the neighbors of each node, if neighbor is the parent skip, else traverse it using dfs again
+4. if dfs is true, check if cyclestart is -1, if not then it means this is current node is part of the cycle, add it
+5. else, it is the start of the cycle assign the current node as cycleStart
 '''
 
 
