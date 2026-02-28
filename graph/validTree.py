@@ -66,7 +66,10 @@ class Solution:
 2. For adjacency list, append each u, v edge both ways u to v and v to u since it's undirected
 3. Use a set to keep track of visited nodes and a deque to keep track of nodes to traverse
 4. First node to be visited is 0 current node and -1 since it has no parent
-5. Start bfs, 
+5. Start bfs, while queue is not empty popleft and visit the current node (current, parent) 
+6. Visist the neighbors of each node, check if it's already visisted, if yes return False (invalid tree)
+7. Skip if current node == parent and if not visited, mark as visited 
+8. After queue is empty return (node == length of visited nodes), if true it's a valid tree
 '''
 
 
