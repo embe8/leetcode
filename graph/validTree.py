@@ -61,5 +61,13 @@ class Solution:
 
         return len(visited) == n
 
+'''
+1. First initialize the adjacency list and handle edge case where number of edges is greater than (n - 1)
+2. For adjacency list, append each u, v edge both ways u to v and v to u since it's undirected
+3. Use a set to keep track of visited nodes and a deque to keep track of nodes to traverse
+4. First node to be visited is 0 current node and -1 since it has no parent
+5. Start bfs, 
+'''
+
 
 
