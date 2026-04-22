@@ -19,7 +19,7 @@ class Solution:
                 # this means the element can be found in the later rows
                 # so we move the top row pointer forward
                 top = row + 1
-                # else if target is greater than the first element in the row
+                # else if target is less than the first element in the row
                 # this means the target can be found in the rows before the current one
                 # so we move the bottom row one row up to scan elements with lower values
             elif target < matrix[row][0]:
