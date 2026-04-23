@@ -1,6 +1,8 @@
 '''
 Problem: Given the root of the binary tree, find its maximum depth
 '''
+
+
 # Recursive solution: O(n)
 class Solution(object):
     def maxDepth(self, root):
@@ -15,6 +17,12 @@ class Solution(object):
         right = self.maxDepth(root.right) # Traverse right subtree recursively
 
         return 1 + max(left, right) # Return the greater of left and right subtree heights
+
+# other recursive version
+class Solution(objec):
+    def maxDepth(self, root):
+        if not root: return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
 # Iterative solution: O(n)
 # Definition for a binary tree node.
