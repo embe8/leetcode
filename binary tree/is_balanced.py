@@ -54,7 +54,7 @@ class BinaryTree:
 
         return left_subtree + current + right_subtree
 
-
+    # uses breadth first search, adding nodes left to right, level by level
     def insertNode(self, value):
         new_node = TreeNode(value)
         if not self.root:
