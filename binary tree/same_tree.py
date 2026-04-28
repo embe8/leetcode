@@ -5,7 +5,9 @@
 #         self.left = left
 #         self.right = right
 '''
-Checks if two trees are the same/contain the same elements
+Checks if two trees are the same/contain the same elements, the idea is if two trees are empty, they're the same
+Else check if first node is the same, if so proceed with passing both left and right nodes of each tree
+Else if not same, return false
 '''
 class Solution(object):
     def isSameTree(self, p, q):
@@ -24,3 +26,16 @@ class Solution(object):
                 return False
             return helper(p.left, q.left) and helper(p.right, q.right)
         return helper(p, q)
+
+# without helper function, recursive
+# Time complexity: O(n)
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if not p and not q: return True
+        
+        if p and q and p.val == q.val:
+            return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        else: return False
+
+
+
