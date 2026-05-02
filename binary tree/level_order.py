@@ -1,3 +1,5 @@
+# bfs no for loop
+
 from collections import deque
 
 class Solution(object):
