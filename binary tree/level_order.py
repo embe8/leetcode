@@ -38,8 +38,8 @@ class Solution:
             for i in range(qLen): # first iteration length is 1[1], second iteration 2[2, 3]
                 node = q.popleft()
                 subArray.append(node.val)
-                if node.left: q.append(node.left)
+                if node.left: q.append(node.left)# for every iteration, you enqueue the nodes in each level so next while loop iteration size == # of nodes endqued
                 if node.right: q.append(node.right)
             if subArray:
-                array.append(subArray)
+                array.append(subArray# after each for loop iteration, you add the subArray to the larger array
         return array
