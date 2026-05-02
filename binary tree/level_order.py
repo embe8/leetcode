@@ -23,3 +23,23 @@ class Solution(object):
                 queue.append((node.right, level + 1))
 
         return result
+# breadth first 
+# time complexity: O(n)
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root: return []
+        array = []
+        q= collections.deque()
+        q.append(root)
+        while q:
+            qLen = len(q)
+            subArray = []
+            for i in range(qLen): # first iteration length is 1[1], second iteration 2[2, 3]
+                node = q.popleft()
+                subArray.append(node.val)
+                if node.left: q.append(node.left)
+                if node.right: q.append(node.right)
+            if subArray:
+                array.append(subArray)
+        return array
