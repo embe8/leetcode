@@ -1,3 +1,8 @@
+# given a node in connected, undirected graph, return a deep copy of the graph
+# Below is the definition of the node, it has a value and neighbors
+
+# Time complexity: O(V+E)
+
 """
 # Definition for a Node.
 class Node:
@@ -25,4 +30,5 @@ class Solution:
                 mapList[cur].neighbors.append(mapList[nei])
 
         return mapList[node]
-        
+
+
