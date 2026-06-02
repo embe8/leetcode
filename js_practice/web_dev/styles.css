@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 8px;
+
+}
+
+label {
+    text-align: center;
+}
