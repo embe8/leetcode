@@ -22,3 +22,22 @@ for row in range(max_rows):
             for col in columns
         )
     )
+
+# not using re or regex
+
+given_string = "I123II456III78IV910"
+roman = {'I', 'V', 'X', 'L', 'C', 'D', 'M'}
+
+headers, numbers = [], []
+cur, is_header = "", True
+
+for ch in given_string:
+    if is_header == (ch in roman):  # still in same section
+        cur += ch
+    else:                           # switched section
+        (headers if is_header else numbers).append(cur)
+        cur, is_header = ch, not is_header
+
+(headers if is_header else numbers).append(cur)  # flush last
+
+numbers = [list(n) for n in numbers]
