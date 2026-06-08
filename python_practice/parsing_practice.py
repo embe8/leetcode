@@ -41,3 +41,10 @@ for ch in given_string:
 (headers if is_header else numbers).append(cur)  # flush last
 
 numbers = [list(n) for n in numbers]
+
+print("".join(f"{h:>5}" for h in headers))
+
+max_rows = max(len(numbers) for col in numbers)
+
+for row in range(max_rows):
+    print("".join(f"{col[row] if row < len(col) else '':>5}" for col in numbers))
