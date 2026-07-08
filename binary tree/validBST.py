@@ -1,3 +1,6 @@
+# return True if given binary search tree is valid: for it to be valid, all left children should be less than its parent
+# all right children should be more than its parent
+# both left and right subtrees are also binary trees
 
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
