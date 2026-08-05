@@ -1,4 +1,5 @@
 # longest repeating character replacement in neetcode: find the longest substring with repeating character of k (that can be replaced) return its length
+# Time complexity: O(m*n)
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         res = 0
