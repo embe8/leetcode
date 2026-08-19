@@ -7,6 +7,6 @@ class Solution:
                 profit = prices[right] - prices[left]
                 maxProfit = max(profit, maxProfit)
             else:
-                left = right
+                left = right # means right is less than left so no point staying at left anymore
             right += 1
         return maxProfit
