@@ -1,3 +1,6 @@
+# given two string s and t, find the shortest substring of s present in t including duplicates, else return empty string
+# Time complexity: O(n + m)
+
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if t is None: return ""
@@ -24,5 +27,5 @@ class Solution:
                 l += 1
         l, r = res
         return s[l : r + 1] if resLen != float("infinity") else ""
-            
-        
+
+
