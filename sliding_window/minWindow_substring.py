@@ -1,5 +1,7 @@
 # given two string s and t, find the shortest substring of s present in t including duplicates, else return empty string
 # Time complexity: O(n + m)
+# Ex. Input: s = "OUZODYXAZV", t = "XYZ"
+# Output: "YXAZ"
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
