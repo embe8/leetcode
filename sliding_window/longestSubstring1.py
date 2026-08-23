@@ -1,4 +1,4 @@
-# for non repeating
+# for lonest string without repeating characters: given a string, find the longest occurring consecutive substring
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         charSet = set()
