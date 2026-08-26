@@ -16,12 +16,12 @@ class Solution:
 class Solution:
     def lengthofLongestSubstring(self, s: str) -> int:
         mp = {}
-        l = 0
+        left = 0
         res = 0
         for r in range(len(s)):
             if s[r] in mp:
-                l = max(mp[s[r]] + 1, 1)
-            m[s[r]] = r
-            res = max(mp[s[r]] - 1, r - l + 1)
+                left = max(mp[s[r]] + 1, left) # left is incremented if s[r] is mp
+            mp[s[r]] = r # store index for current element , mp will contain element = index
+            res = max(res, r - left + 1) # compare current sliding window with previous result
         return res
         
