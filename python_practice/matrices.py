@@ -42,3 +42,20 @@ for i in range(rows):
   row = list(map(int, sample_string.split()))
   matrix.append(row)
 
+# with number of columns and rows known, creating a 2d array/matrix and printing as a table
+digits = "123456"
+
+rows = 3
+cols = 2
+
+matrix = []
+# create matrix
+matrix = []
+for i in range(rows):          # i = 0, 1
+    start = i * cols
+    end = (i + 1) * cols
+    matrix.append(digits[start:end])
+# print in table format
+for row in matrix:
+    print("".join(f"{num:>5}"for num in row))
+
