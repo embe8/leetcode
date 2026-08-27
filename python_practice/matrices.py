@@ -58,7 +58,7 @@ for i in range(rows):          # i = 0, 1
 # print in table format
 for row in matrix:
     print("".join(f"{num:>5}"for num in row))
-
+# CASE
 # if needed to split into rows when an element is encountered
 # sample is # in this case
 sample = "12#345#6"
@@ -66,3 +66,18 @@ sample = "12#345#6"
 matrix = [[int(d) for d in chunk] for chunk in sample.split("#")]
 print(matrix)  # [[1, 2], [3, 4, 5], [6]]
 
+# CASE with PADDING
+digits = "1#23##45#6"
+#output has empty cells if we do not pad
+#[[1], [2, 3], [0], [4, 5], [6]]
+#    1
+#    2    3
+#    0
+#    4    5
+#    6
+# get max col length
+matrix = [[int(d) for d in chunk] if chunk else [0] for chunk in digits.split('#')]
+max_col = max(len(row) for row in matrix)
+matrix = [row + [0] * (max_col - len(row)) for row in matrix]
+for row in matrix:
+    print("".join(f"{digit: >5}" for digit in row))
