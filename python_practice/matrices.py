@@ -59,3 +59,10 @@ for i in range(rows):          # i = 0, 1
 for row in matrix:
     print("".join(f"{num:>5}"for num in row))
 
+# if needed to split into rows when an element is encountered
+# sample is # in this case
+sample = "12#345#6"
+
+matrix = [[int(d) for d in chunk] for chunk in sample.split("#")]
+print(matrix)  # [[1, 2], [3, 4, 5], [6]]
+
