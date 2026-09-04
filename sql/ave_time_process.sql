@@ -8,7 +8,7 @@
 +----------------+---------+
 # Problem name: Average Time of Process Per Machine
 # Problem: There is a factory website that has several machines each running the same number of processes. Write a solution to find the average time each machine takes to complete a process.
-
+# mySQL only: for postgres it throws an error
 SELECT a.machine_id,
 round(
     (SELECT avg(a1.timestamp) from Activity a1 where a1.activity_type='end' and a1.machine_id = a.machine_id) -
