@@ -10,3 +10,8 @@ GROUP BY v.customer_id
 
 '''Note: after LEFT JOIN visits v to transactions t, all entries in transactions t that has no match with visits ID meaning all customers that made no transactions are left with null in t.visit_id'''
 '''Note: for left join all transactions in left table are included'''
+
+SELECT customer_id, COUNT(visit_id) as count_no_trans
+FROM Visits
+WHERE visit_id NOT IN (SELECT visit_id from Transactions)
+GROUP BY customer_id
