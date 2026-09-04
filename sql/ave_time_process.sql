@@ -16,3 +16,15 @@ round(
     ), 3) as processing_time
 from Activity a
 GROUP BY a.machine_id
+# PostGres solution:
+SELECT  machine_id,
+        ROUND(
+            AVG(
+            CASE 
+                WHEN activity_type = 'start' THEN -timestamp 
+                ELSE timestamp
+            END)::decimal * 2 # there are two rows per process_id
+            , 3) AS processing_time
+FROM Activity
+GROUP BY machine_id
+ORDER BY machine_id ASC;
