@@ -2,7 +2,8 @@
 # Given Table 1 named users with user_id and user_name and Table 2
 # named Register with contest_id and user_id and user_id being the PK for both,
 # Problem: Find the percentage of users for each contest rounded to 2 decimal places
-
+''' Important: No joins needed since Register table have user_id and contest_id (AS PK) '''
+''' Select Query inside Select Query is needed since total users is in Users table '''
 SELECT 
     contest_id,
     ROUND(COUNT(user_id) * 100.0 / (SELECT COUNT(*) FROM Users), 2) AS percentage
