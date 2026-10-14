@@ -39,3 +39,4 @@ JOIN Activity a2
   AND a2.activity_type = 'end'
 GROUP BY a1.machine_id
 ORDER BY processing_time ASC
+# this is a self join where "match each start row with end row when they have the same machine id and process id"
