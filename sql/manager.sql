@@ -1,13 +1,13 @@
 # Given table: Find the manager with at least 5 direct 
 #  Employee
-+-------------+---------+
-| Column Name | Type    |
-+-------------+---------+
-| id          | int     |
-| name        | varchar |
-| department  | varchar |
-| managerId   | int     |
-+-------------+---------+
+#+-------------+---------+
+#| Column Name | Type    |
+#+-------------+---------+
+#| id          | int     |
+#| name        | varchar |
+#| department  | varchar |
+#| managerId   | int     |
+#+-------------+---------+
 
 SELECT id
 FROM Employee e
