@@ -1,3 +1,6 @@
+# 1633 Percentage of users attended a contest
+#
+
 SELECT r.contest_id, ROUND((COUNT(r.user_id) * 100) / (SELECT COUNT(*) from Users), 2) as percentage
 FROM Register r
 LEFT JOIN Users u
