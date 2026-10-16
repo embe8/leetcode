@@ -1,5 +1,5 @@
 # Average selling price problem in leetcode problem no. 1251
-
+# Coalesce is used for null values -> 0
 SELECT 
     p.product_id,
     ROUND(
