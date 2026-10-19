@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +10,18 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             min-height: 100vh;
             background-color: purple;
-            display: flex; /* center */
+            display: flex;
+            /* center */
             justify-content: center;
             align-items: center;
-            padding: 20px; /* keeps box off edges */
+            padding: 20px;
+            /* keeps box off edges */
         }
+
         .content-box {
             background-color: rgba(245, 245, 245, 1.0);
             width: 100%;
@@ -25,6 +30,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
+
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -33,58 +39,93 @@
             margin-bottom: 24px;
             margin-top: 0px;
         }
+
         .search-input {
-            width: 100%; /* makes the space it takes up larger sideways */
+            width: 100%;
+            /* makes the space it takes up larger sideways */
             border: none;
             border-radius: 8px;
             outline: none;
-            background-color: #eee; /* light gray fill */
+            background-color: #eee;
+            /* light gray fill */
             padding: 6px 8px;
         }
+
         .search-wrapper {
-            position: relative; /* make it the reference point for the icon */
+            position: relative;
+            /* make it the reference point for the icon */
             flex: 1;
             max-width: 320px;
         }
+
         .search-icon {
             position: absolute;
             left: 8px;
             top: 30%;
-            transform: translateY(-50%); /* vertically centers icon */
+            transform: translateY(-50%);
+            /* vertically centers icon */
             color: #888;
-            pointer-events: none; /* clicks pass thru input */
+            pointer-events: none;
+            /* clicks pass thru input */
         }
+
         .bell {
             font-size: 1.2rem;
             cursor: pointer;
-            margin-right: 10px; /* space between bell and avatar */
+            margin-right: 10px;
+            /* space between bell and avatar */
 
         }
+
         .toolbar {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 16px;
+            gap: 32px;
             margin-bottom: 24px;
             margin-top: 0px;
-        }   
+        }
+
         .filter-btn,
         .tab,
         .icon-btn {
             border: none;
             background: transparent;
             cursor: pointer;
-            
+            box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+
 
         }
+
         .tabs {
             display: flex;
-            gap: 8px;
+            gap: 32px;
+            flex: 1;
+
 
         }
-        </style>
+
+        .tab.active {
+            box-shadow: 0 4px 0 red;
+        }
+
+        .view-buttons {
+            display: flex;
+            gap: 24px;
+            margin-left: 12px;
+        }
+
+        .left-group,
+        .featured,
+        .featured-trending {
+            display: flex;
+            flex: 1;
+            /* stretch all the way to fill row */
+            justify-content: space-between;
+        }
+    </style>
     <title>Page</title>
 </head>
+
 <body>
     <div class="content-box">
         <header class="top-bar">
@@ -94,9 +135,9 @@
             <div class="search-wrapper">
                 <span class="search-icon">&#128269;</span>
 
-            <input type="text" class="search-input" placeholder="      Search for anything">
-                                    </div>
-            
+                <input type="text" class="search-input" placeholder="      Search for anything">
+            </div>
+
             <div class="user-menu">
                 <span class="bell">&#128276;</span>
                 <img src="avatar.jpg" alt="user avatar" class="avatar">
@@ -106,16 +147,42 @@
         </header>
 
         <div class="toolbar">
-            <button class="filter-btn">Categories &#9662;</button>
-            <div class="tabs">
+            <div class="left-group">
+                <button class="filter-btn">Categories &#9662;</button>
                 <button class="tab active" data-tab="recommended">Recommended</button>
                 <button class="tab" data-tab="trending">Trending Games</button>
                 <button class="tab" data-tab="new">New Releases</button>
             </div>
-        </div>
-    </div>
-<script>
 
-</script>
+            <div class="view-buttons">
+                <button class="icon-btn" title="Grid view">&#9638;</button>
+                <button class="icon-btn" title="List view">&#8801;</button>
+            </div>
+        </div>
+
+        <div class="tab-content active" id="recommended">
+            <!-- recommended game tiles-->
+            <div class="featured">
+                <div class="featured-card"><img src="game1.jpg" alt="Game 1"></div>
+                <div class="featured-card"><img src="game2.jpg" alt="Game 2"></div>
+                <div class="featured-card"><img src="game3.jpg" alt="Game 3"></div>
+
+            </div>
+        </div>
+        <div class="tab-content" id="trending">
+            <div class="featured-trending">
+                <div class="trending-card"><img src="game1.jpg" alt="Game 1"></div>
+                <div class="trending-card"><img src="game2.jpg" alt="Game 2"></div>
+                <div class="trending-card"><img src="game3.jpg" alt="Game 3"></div>
+                <div class="trending-card"><img src="game3.jpg" alt="Game 3"></div>
+
+            </div>
+        </div>
+        <div class="tab-content" id="new">New releases here</div>
+    </div>
+    <script>
+
+    </script>
 </body>
+
 </html>
