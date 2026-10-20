@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *{
+            box-sizing: border-box; /* factors in padding in the width */
+        }
+        body{
+            margin: 0;
+        }
+        header{
+            background-color: hsl(0, 0%, 86%);
+            text-align: center;
+            padding: 25px;
+        }
+        .navbar{
+            background-color: hsl(0, 39%, 71%);
+            height: 50px;
+        }
+        aside{
+            width: 20%;
+            float: left;
+            padding: 10px;
+        }
+        section{
+            width: 40%;
+            float: left;
+            padding: 10px;
+        }
+        article{
+            width: 40%;
+            float: left;
+            padding: 10px;
+        }
+                footer{
+                    display: block;
+                    clear: both; /* clear float */
+            background-color: hsl(0, 0%, 86%);
+            text-align: center;
+            padding: 25px;
+        }
+        /* if width is 600 and below we can change css properties */
+        /* responsive css - if user switches to mobile, then we'll switch to mobile version of webpage */
+        /* taking up 100% of width (aside, section, article below), if webpage adjusted then the part sizes does too*/
+        @media screen and (max-width:600px){
+            aside, section, article{
+                width: 100%;
+            }
+        }
+
+    </style>
+    <title>Page</title>
+</head>
+
+<body>
+    <header>
+        <h2>Header</h2>
+    </header>
+    <nav class="navbar">
+    </nav>
+    <main>
+        <aside>
+            <h2>This is aside</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nihil molestiae quos officiis, accusantium voluptatem, reprehenderit ducimus provident natus error numquam! Obcaecati quae officiis porro sequi fugiat quo laboriosam explicabo!</p>
+
+        </aside>
+        <section>
+            <h2>This is a section</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ea commodi, quis consequuntur et quam enim atque reprehenderit debitis. Excepturi rerum, architecto ipsam aliquam sed molestias quia corporis nulla magni?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste in, neque vero alias sed sit et quaerat minima reprehenderit vel ad sunt? Perspiciatis corporis dignissimos quaerat. Illum aperiam quae quas!</p>
+        </section>
+        <article>
+                        <h2>This is an article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores ducimus voluptatem minima? Numquam aut sint similique reiciendis labore nihil repellat, officia, molestias laudantium, eum doloribus. Illo, eos? Enim, unde.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad magni sed eos ea harum atque perspiciatis ipsum dolores sint id? Expedita minus atque debitis explicabo veniam deserunt? Maxime, ex magnam?</p>
+
+
+        </article>
+        <footer>
+            <h2>Footer</h2>
+        </footer>
+    </main>
+    <script>
+
+    </script>
+</body>
+
+</html>
