@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            /* factors in padding in the width */
+        }
+
+        body {
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            background-color: hsl(0, 3%, 94%);
+            margin: 0px;
+            overflow: hidden;
+            padding-right: 50px;
+            padding-bottom: 0px;
+        }
+
+        .navbar .logo {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .navbar a {
+            color: hsl(0, 4%, 71%);
+            display: block;
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar li {
+            float: right;
+        }
+
+        .navbar .logo img {
+            height: 15px;
+            display: block;
+        }
+
+        section.carousel {
+            clear: both;
+            display: flex;
+            background-color: hsl(226, 70%, 39%);
+            width: 100%;
+            float: left;
+            padding: 150px;
+            margin-left: auto;
+            justify-content: left;
+            flex-direction: column;
+            align-items: flex-start;
+            color: rgb(197, 192, 192);
+            position: relative;
+
+        }
+
+        section h2{
+            color: white;
+        }
+   
+        .carousel-btn {
+            position: absolute;
+    top: 50%;
+    transform: translateY(-50%);   /* vertically centers the arrow */
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+        .section-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .section-buttons button {
+            border-radius: 15px;
+            font-size: 0.6rem;
+            cursor: pointer;
+            padding: 8px 24px;
+
+        }
+
+        .section-buttons button:first-child {
+            background-color: white;
+            color: hsl(226, 70%, 39%);
+            border: none;
+        }
+
+        .section-buttons button:last-child {
+            background-color: hsl(226, 70%, 39%);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .content {
+            display: flex;
+            background-color: hsl(0, 0%, 97%);
+            width: 100%;
+            float: left;
+            padding: 40px;
+            margin-left: auto;
+            justify-content: left;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 400px;
+
+        }
+
+        .content ul{
+            
+            list-style-type: none;
+            display: flex;
+            gap: 32px;
+            padding: 0;
+            margin-top: 50px;
+        }
+
+        .content-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .content-buttons button{
+            border-radius: 15px;
+            padding: 8px 10px;
+            color: white;
+            background-color: hsl(226, 70%, 39%);
+        }
+
+        article {
+            width: 40%;
+            float: left;
+            padding: 10px;
+        }
+
+        footer {
+            display: block;
+            clear: both;
+            /* clear float */
+            background-color: hsl(0, 0%, 86%);
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media screen and (max-width:600px) {
+
+            aside,
+            section,
+            article {
+                width: 100%;
+            }
+        }
+    </style>
+    <title>Home</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li class="logo"><a href="#"><img src="logo.png" alt="logo"></a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="">Team</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section class="carousel">
+            <button class="carousel-btn prev" aria-label="Previous slide">&#10094</button>
+            <h2>This is a section</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto ea commodi, quis consequuntur et quam
+                enim atque reprehenderit debitis. Excepturi rerum, architecto ipsam aliquam sed molestias quia corporis
+                nulla magni?</p>
+            </p>
+            <div class="section-buttons">
+                <button>Get Started</button>
+                <button>About Us</button>
+            </div>
+                        <button class="carousel-btn next" aria-label="Next slide">&#10095</button>
+
+  
+        
+                    </section>
+        <div class="content">
+            <h2 style="color:rgb(27, 27, 181)">About Us</h2>
+            <h4>ksjdijddjhoisdj oijdosujdo kodjosdj</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores ducimus voluptatem minima?
+                Numquam aut sint similique reiciendis labore nihil repellat, officia, molestias laudantium, eum
+                doloribus. Illo, eos? Enim, unde.</p>
+            <div class="content-buttons">
+                <button>Read More</button>
+            </div>
+                  <ul>
+            <li>Museum upeus</li>
+            <li>Lorem ipsyus</li>
+            <li>Ipsum lored it</li>
+        </ul>
+        </div>
+        <footer>
+            <h2>Footer</h2>
+        </footer>
+    </main>
+    <script>
+
+    </script>
+</body>
+
+</html>
