@@ -81,3 +81,25 @@ max_col = max(len(row) for row in matrix)
 matrix = [row + [0] * (max_col - len(row)) for row in matrix]
 for row in matrix:
     print("".join(f"{digit: >5}" for digit in row))
+
+
+# CASE with numerals as row names
+import re, html
+string = "I123II45III67"
+# capture all roman numerals and digits
+pairs = re.findall(r'([IVXCDLM]+)(\d*)', string)
+
+matrix = {name: [int(d) for d in digits] if digits else [0] for name, digits in pairs}
+max_col = max(len(row) for row in matrix.values())
+label_w = max(len(name) for name in matrix)
+rows=[]
+for name, row in matrix.items():
+    # pad short rows with 0
+    row = row + [0] * (max_col - len(row))
+    cells = "".join(f"<td>{d}</td>" for d in row)
+    rows.append(f"<tr><th>{html.escape(name)}</th>{cells}</tr>")
+    table = "<table border='1' cellpadding='6'>\n" + "\n".join(rows) + "\n</table>" 
+    print(table)
+#   print(f"{name:<{label_w}}" + "".join(f"{digit:>5}" for digit in row))
+with open("matrix.html", "w") as f:
+    f.write(table)
